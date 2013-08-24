@@ -27,8 +27,8 @@
         </div>
         <div class='container'>
             <div class='row'>
-                <div class='col-md-9'>
-                    <table class='table'>
+                <div class='col-md-4 movie-list'>
+                    <table class='table table-hover'>
                         <thead>
                             <tr>
                                 <th>Score</th>
@@ -40,15 +40,35 @@
                         </tbody>
                     </table>
                 </div>
+                <div class='col-md-7 movie-detail'>
+                </div>
             </div>
         </div>
 
         <script id="tpl-box-office-item" type="text/x-handlebars-template">
-            <tr>
+            <tr data-id="{{_index}}">
                 <td>{{ratings.critics_score}}</td>
                 <td>{{mpaa_rating}}</td>
                 <td>{{title}}</td>
             </tr>
+        </script>
+        <script id="tpl-movie-detail" type="text/x-handlebars-template">
+            <div class='well'>
+                <div class='row'>
+                    <div class='col-md-2'>
+                        <img src="{{posters.profile}}" class='img-thumbnail' alt="">
+                    </div>
+                    <div class='col-md-7'>
+                        <h1>{{title}} ({{year}})</h1>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-10'>
+                        <h4>Synopsis</h4>
+                        <blockquote>{{synopsis}}</blockquote>
+                    </div>
+                </div>
+            <div>
         </script>
 
 
